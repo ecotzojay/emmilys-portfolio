@@ -1,4 +1,9 @@
 title: Emmily Cotzojay Portfolio
 description: My personal portfolio website
-theme: minima
 permalink: pretty
+exclude:
+  - README.md
+  - LICENSE
+  - node_modules/
+  - package.json
+  - package-lock.json
