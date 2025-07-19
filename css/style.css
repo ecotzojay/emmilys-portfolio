@@ -1,31 +1,559 @@
-body {
-	font-family: Arial, sans-serif;
+html, body {
+	/*Set height to full view and remove default spacing*/
+	height: 100%;
 	margin: 0;
 	padding: 0;
-	background: #fdfdfd;
-	color: #333;
+}
+
+:root {
+	/*Define color variables for color palette*/
+  	--deep-navy: #0C0067;
+  	--lavender: #DFCDFB;
+  	--blush: #F6D4D4;
+ 	--text-dark: #222;
+  	--text-light: #fff;
+}
+
+body::before {
+	/*Add a somewhat transparent fixed background image*/
+  	content: '';
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	background-image: url('../assets/images/duotone1.png');
+  	background-size: cover;
+  	background-position: center;
+  	opacity: 0.40;
+  	z-index: -1;
+  	pointer-events: none;
+}
+
+body {
+	/*Base typograpy and layout styling*/
+  	font-family: Georgia, serif;
+  	margin: 0;
+  	padding: 0;
+  	font-size: 16px;
+  	color: var(--text-dark);
+  	background-color: #fdfdfd;
+  	line-height: 1.6;
+  	display: flex;
+  	flex-direction: column;
+}
+
+h1, h2, h3 {
+	/*Heading font and color*/
+  	font-family: 'DM Serif Display', serif;
+  	color: var(--deep-navy);
 }
 
 header {
-	background-color: #f5f5f5;
-	padding: 1.5em;
-	text-align: center;
+	/*Header styling with deep navy background*/
+  	background-color: var(--deep-navy);
+  	padding: 1.5em;
+  	text-align: center;
+  	border-bottom: 2.5px solid var(--blush);
+}
+
+header h1 {
+	/*Title inside header*/
+  	margin-bottom: 0.5em;
+  	font-size: 2em;
+  	color: var(--lavender);
+}
+
+.project-header {
+	/*Layout for project title and logo*/
+	display: flex;
+	align-items: center;
+	gap: 0.75em;
+}
+
+.project-logo {
+	/*Sizing for project icons*/
+  	width: 36px;
+  	height: auto;
 }
 
 nav a {
-	margin: 0 1em;
-	text-decoration: none;
-	color: #333;
-	font-weight: bold;
+	/*Navigation links styling*/
+  	margin: 0 1em;
+  	text-decoration: none;
+  	color: var(--lavender);
+  	font-weight: bold;
+}
+
+nav a:hover {
+	/*Hover effect on navigation links*/
+  	text-decoration: underline;
 }
 
 main {
-	padding: 2em;
+	/*Add spacing from the top and allow flexible growth*/
+  	margin-top: 3rem;
+  	flex: 1;
+}
+
+.intro-container {
+	/*Intro content layout*/
+  	max-width: 1000px;
+  	font-size: 1.4rem;
+  	margin-left: auto;
+  	margin-right: auto;
+  	display: flex;
+  	gap: 3.5rem;
+  	align-items: flex-start;
+  	padding: 1rem 0;
+}
+
+.text-blocks {
+	/*Container for intro text*/
+	flex: 1;
+  	max-width: 600px;
+  	display: flex;
+  	flex-direction: column;
+}
+
+.intro-text h2 {
+	/*Styling for intro title*/
+	text-transform: lowercase;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.intro-text p {
+	/*Intro paragraph spacing*/
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+.carousel-section h2 {
+	/*Carousel title styling*/
+  	text-transform: lowercase;
+  	font-weight: 600;
+  	color: #0C0067;
+  	margin-top: 0.5rem;
+  	margin-bottom: -0.5rem;
+}
+
+.carousel-container {
+	/*Container for rotating text*/
+  	position: relative;
+  	height: 2.5em;
+  	overflow: visible;
+  	font-size: 1.2em;
+  	font-weight: 500;
+  	color: var(--text-dark);
+}
+
+.carousel-text {
+	/*Hidden text for animation*/
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	opacity: 0;
+  	transition: opacity 0.5s ease-in-out;
+  	background-color: rgba(246, 212, 212, 0.5);
+  	padding: 0.25rem 0.5rem;
+  	border-radius: 5px;
+  	white-space: nowrap;
+  	line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+	/*Allow text to wrap on small screens*/
+	.carousel-text {
+		white-space: normal;
+	}
+}
+
+.intro-image img {
+	/*Style intro image as circular*/
+  	width: 320px;
+  	height: 320px;
+  	border-radius: 50%;
+  	object-fit: cover;
+  	border: 2px solid var(--blush);
+}
+
+.about-section {
+	/*Layout for About Me section*/
+  	display: flex;
+  	gap: 3.5em;
+  	align-items: flex-start;
+  	justify-content: space-between;
+  	flex-wrap: wrap;
+  	max-width: 1000px;
+  	margin: 0 auto;
+  	padding: 1em 0;
+}
+
+.about-text {
+	/*Text content of About Me*/
+  	flex: 1 1 60%;
+  	font-size: 1.1rem;
+  	line-height: 1.6;
+  	margin-top: 2rem;
+}
+
+.about-text h2 {
+	/*Heading for About section*/
+	font-family: 'DM Serif Display', serif;
+	color: var(--deep-navy);
+	margin-bottom: 0.55rem;
+}
+
+.about-image img {
+	/*About photo styling*/
+  	width: 270px;
+  	height: auto;
+  	object-fit: cover;
+  	border-radius: 6px;
+  	border: 2px solid var(--blush);
+  	display: block;
+}
+
+.social-icons {
+	/*Container for social media links*/
+  	margin-top: 1em;
+}
+
+.social-icons a {
+	/*Remove underline from social links*/
+  	text-decoration: none;
+}
+
+.social-icons a img {
+	/*Social icon size and hover effect*/
+  	width: 28px;
+  	height: 28px;
+  	margin: 0 0.5em;
+  	transition: opacity 0.3s ease;
+}
+
+.social-icons a img:hover {	
+  	opacity: 0.7;
+}
+
+.tools-section {
+	/*Tools section container*/
+  	text-align: center;
+  	margin-top: 0.5em;
+  	margin-bottom: 2em;
+}
+
+.tools-marquee {
+	/*Scrolling container for tool icons*/
+  	overflow: hidden;
+  	white-space: nowrap;
+  	width: 100%;
+  	background-color: rgba(246, 212, 212, 0.2);
+  	padding: 1em 0;
+  	position: relative;
+}
+
+.tools-track {
+	/*Track that scrolls horizontally*/
+  	display: inline-block;
+  	white-space: nowrap;
+  	animation: scroll-tools 25s linear infinite;
+  	color: var(--deep-navy);
+}
+
+.tools-track img {
+	/*Tool icon styling*/
+  	width: 50px;
+  	height: 50px;
+  	margin: 0 1.25em;
+  	vertical-align: middle;
+  	object-fit: contain;
+}
+
+@keyframes scroll-tools {
+	/*Animate tools marquee from right to left*/
+  	0% {
+    	transform: translateX(0);
+  	}
+  	100% {
+    	transform: translateX(-50%);
+  	}
+}
+
+/* Accordion styles */
+.accordion-container {
+  	max-width: 900px;
+ 	margin: 2em auto;
+  	border-radius: 12px;
+  	overflow: hidden;
+}
+
+.accordion-header,
+.accordion-panel {
+  	width: 100%;
+  	box-sizing: border-box;
+  	color: var(--deep-navy);
+}
+
+.accordion-header {
+	/*Clickable accordion header*/
+  	padding: 1em 1.5em;
+  	min-height: 64px;
+  	background-color: var(--lavender);
+  	font-size: 1.25rem;
+  	font-family: 'DM Serif Display', serif;
+  	display: flex;
+  	align-items: center;
+  	gap: 0.75em;
+  	border: none;
+  	cursor: pointer;
+  	transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover,
+.accordion-header:focus {
+	/*Hover and focus effects for header*/
+  	background-color: var(--blush);
+  	outline: none;
+}
+
+.accordion-header img.project-logo {
+	/*Logo inside accordion header*/
+  	width: 36px;
+  	object-fit: contain;
+  	height: 36px;
+}
+
+.accordion-panel {
+	/*Expandable accordion content*/
+  	background-color: rgba(246, 212, 212, 0.6);
+  	padding: 1.5em;
+  	font-family: Georgia, serif;
+  	line-height: 1.6;
+}
+
+.accordion-panel > p,
+.accordion-panel > ol {
+	/*Align problem and solution text*/
+  	text-align: left;
+  	margin-bottom: 0.5em;
+}
+
+.project-details-columns {
+	/*Layout for tools, team, and role*/
+  	display: flex;
+  	justify-content: center;
+  	gap: 1.5rem;             
+  	max-width: 800px;
+  	flex-wrap: wrap;
+}
+
+.project-detail {
+	/*Individual detail column*/
+  	flex: 1 1 200px;         
+  	max-width: 220px;
+  	text-align: center;  
+  	margin-bottom: 0.5em;
+}
+
+.project-detail h4, .timeline h4 {
+	/*Underline section headers*/
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.timeline {
+	/*Project timeline styling*/
+  	max-width: 900px;
+  	margin-top: 1em;
+  	margin-bottom: 1em;
+  	text-align: center;
+}
+
+.apple-mockups {
+	/*Layout for Apple project images*/
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	gap: 2em;
+  	margin-top: 0.5em;
+  	max-width: 900px;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+
+.apple-mockups figure {
+	/*Container for each Apple image*/
+  	width: 0 1 calc(50% - 1em);
+  	max-width: 350px;
+  	text-align: center;
+}
+
+.apple-mockups img {
+	/*Styling for Apple mockup images*/
+  	width: 100%;
+  	height: 300px;
+  	object-fit: cover;
+  	border: 1px solid #ddd;
+  	border-radius: 6px;
+  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.apple-mockups figcaption {
+	/*Caption under Apple mockups*/
+  	margin-top: 0.5em;
+  	font-size: 0.95em;
+  	font-family: Georgia, serif;
+  	color: var(--deep-navy);
+}
+
+.deplastified-mockups {
+	/*Layout for Deplastified project images*/
+  	display: flex;
+  	justify-content: center;
+  	gap: 2em;
+  	margin: 1em auto;
+  	max-width: 900px;
+  	flex-wrap: wrap;
+}
+
+.deplastified-mockups figure {
+	/*Container for each Deplastified image*/
+  	flex: 1;
+  	max-width: 300px;
+  	text-align: center;
+}
+
+.deplastified-mockups img {
+	/*Styling for Deplastified mockup images*/
+  	width: 100%;
+  	margin-top: 1em;
+  	height: 375px;
+  	object-fit: cover;
+  	border: 1px solid #ddd;
+  	border-radius: 6px;
+  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.deplastified-mockups figcaption {
+	/*Caption under Deplastified mockups*/
+  	margin-top: 0.5em;
+  	font-size: 0.95em;
+  	font-family: Georgia, serif;
+  	color: var(--deep-navy);
+}
+
+.deplastified-mockups-horitzontal {
+	/*Layout for Deplastified project images-Hortizontal*/
+  	justify-content: center;
+  	display: flex;
+  	margin-top: 0.5em;
+}
+
+.deplastified-mockups-horitzontal figure {
+	/*Container for Deplastified horizontal image*/
+  	max-width: 600px;
+  	text-align: center;
+}
+
+.deplastified-mockups-horitzontal img{
+	/*Styling for Deplastified mockup horizontal images*/
+  	height: auto;
+  	width: 100%;
+  	object-fit: contain;
+  	border: 1px solid #ddd;
+  	border-radius: 6px;
+  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.deplastified-mockups-horitzontal figcaption {
+	/*Caption under Deplastified horizontal mockups*/
+  	margin-top: 0.5em;
+  	font-size: 0.95em;
+  	font-family: Georgia, serif;
+  	color: var(--deep-navy);
+}
+
+.flyer-gallery {
+	/*Flyer gallery layout*/
+  	display: flex;
+  	gap: 2em;
+  	flex-wrap: wrap;
+  	justify-content: center;
+}
+
+.flyer-gallery img {
+	/*Style each flyer image*/
+  	width: auto;
+  	height: 200px;
+  	border-radius: 6px;
+  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.usfca-flyers h3, .usfca-videos h3 {
+	/*Center titles for flyer and video sections*/
+	text-align: center;
+}
+
+.video-grid {
+	/*Grid layout for videos*/
+  	display: flex;
+  	flex-wrap: wrap;
+  	gap: 1.5em;
+  	justify-content: center;
+  	margin-top: 1em;
+}
+
+.video-grid video {
+	/*Style individual video elements*/
+  	max-width: 250px;
+  	height: auto;
+  	border-radius: 8px;
+  	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-	background-color: #eee;
-	text-align: center;
-	padding: 1em;
-	margin-top: 3em;
+	/*Footer styling*/
+  	padding: 1.5em;
+  	background-color: var(--deep-navy);
+  	text-align: center;
+  	font-family: 'DM Serif Display', serif;
+  	color: var(--lavender);
+  	border-top: 2px solid var(--blush);
+  	margin-top: 1.5rem;
+  	width: 100vw;
+  	max-width: 100vw;
+  	box-sizing: border-box;
+}
+
+footer p {
+	/*Style for copyright text*/
+	margin: 0.5em 0 0;
+	font-size: 1em;
+}
+
+footer > div.social-icons,
+footer > p {
+	/*Ensure social icons and copyright text stay centered */
+  	max-width: 1000px;
+  	margin: 0 auto;
+  	padding: 0;
+}
+
+footer .social-icons a img {
+	/*Style the social icon images in the footer*/
+  	width: 28px;
+  	height: 28px;
+  	object-fit: contain;
+  	margin: 0 0.5em;
+  	vertical-align: middle;
+  	margin-bottom: 0.5rem;
+  	filter: brightness(0) saturate(95%) invert(92%) sepia(12%) saturate(350%) hue-rotate(230deg) brightness(85%) contrast(85%);
+  	transition: opacity 0.3s ease;
+}
+
+footer .social-icons a img:hover {
+	/*Reduce opacity on hover for icons*/
+  	opacity: 0.7;
 }

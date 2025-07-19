@@ -1,30 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+	<!--Metadata and page setup-->
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Emmily Cotzojay | Portfolio</title>
+	<title>Emmily Cotzojay's Portfolio</title>
 	<link rel="stylesheet" href="css/style.css" />
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+	<link rel="preload" as="image" href="assets/images/duotone1.png">
 </head>
 <body>
+
+	<!--Page header with title and navigation menu-->
 	<header>
-		<h1>Hi, I'm Emmily!</h1>
+		<h1>Emmily's Portfolio</h1>
 		<nav>
-			<a href="about.html">About</a>
+			<a href="index.html">Home</a>
 			<a href="projects.html">Projects</a>
-			<a href="contact.html">Contact</a>
+			<a href="about.html">About Me</a>
 		</nav>
 	</header>
 
+	<!--Main content-->
 	<main>
-		<section>
-			<h2>Welcome</h2>
-			<p>This is my digital portfolio where I combine computer science and UX design to create accessible experiences!</p>
-		</section>
+		<section class="intro-container">
+			<div class="text-blocks">
+				<!--Intro text block-->
+				<div class="intro-text">
+					<h2>welcome to my portfolio!</h2>
+					<p>this is my digital corner, a space to share the projects that reflect how I learn, design, and build. </p>
+				</div>
+
+			<!--Carousel section showcasing personal highlights-->
+			<section class="carousel-section">
+				<h2>who is emmily?</h2>
+				<div class="carousel-container">
+					<p class="carousel-text">first-generation college student</p>
+					<p class="carousel-text">aspiring ux designer</p>
+					<p class="carousel-text">aspiring front-end engineer</p>
+					<p class="carousel-text">passionate about accessible tech</p>
+					<p class="carousel-text">techie with a soft spot for people's stories</p>
+					<p class="carousel-text">care about how things look & how they work</p>
+				</div>
+			</section>
+		</div>
+
+		<!--Image of Emmily-->
+		<div class="intro-image">
+			<img src="assets/images/emmily1.jpeg" alt="Photo of Emmily Cotzojay"/>
+		</div>
+	</section>
 	</main>
 
+	<!--Footer with social media links and copyright-->
 	<footer>
-		<p>© 2025 Emmily Cotzojay</p>
+		<div class="social-icons">
+			<a href="https://www.linkedin.com/in/emmily-cotzojay/" target="_blank">
+				<img src="assets/icons/linkedin.svg" alt="LinkedIn icon" />
+			</a>
+			<a href="https://www.pinterest.com/emmatravelhistory/" target="_blank">
+				<img src="assets/icons/pinterest.svg" alt="Pinterest icon" />
+			</a>
+			<a href="mailto:cotzojayemmily@gmail.com">
+				<img src="assets/icons/email.svg" alt="Email icon" />
+			</a>
+		</div>	
+		<p class="copyright">© 2025 Emmily Cotzojay</p>
 	</footer>
+
+	<!--JavaScript for carousel function-->
+	<script src="assets/scripts/carousel.js"></script>
 </body>
 </html>
