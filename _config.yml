@@ -1,9 +1,3 @@
 title: Emmily Cotzojay Portfolio
 description: My personal portfolio website
 permalink: pretty
-exclude:
-  - README.md
-  - LICENSE
-  - node_modules/
-  - package.json
-  - package-lock.json
