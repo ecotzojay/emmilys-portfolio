@@ -163,6 +163,10 @@ main {
 }
 
 @media (max-width: 600px) {
+	body {
+		margin: 0 1rem;
+		font-size: 16px;
+	}
 	/*Allow text to wrap on small screens*/
 	.carousel-text {
 		white-space: normal;
