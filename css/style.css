@@ -541,7 +541,10 @@ main {
 		margin: 0 auto;
 		text-align: center;
 		box-sizing: border-box;
-		flex-wrap: wrap;
+		display: flex;    
+		flex-wrap: wrap;      
+		justify-content: center;
+		gap: 1rem; 
 	}
 
 	/* Projects section */
