@@ -437,16 +437,10 @@ main {
   	color: var(--deep-navy);
 }
 
-.deplastified-mockups-horizontal {
-	/*Layout for Deplastified project images-Hortizontal*/
-  	justify-content: center;
-  	display: flex;
-  	margin-top: 0.5em;
-}
-
 .deplastified-mockups-horizontal figure {
 	/*Container for Deplastified horizontal image*/
-  	max-width: 400px;
+  	max-width: 900px;
+  	margin: 0 auto;
   	text-align: center;
 }
 
@@ -454,10 +448,10 @@ main {
 	/*Styling for Deplastified mockup horizontal images*/
   	height: auto;
   	width: 100%;
-  	object-fit: contain;
-  	border: 1px solid #ddd;
-  	border-radius: 6px;
-  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  	display: block;
+	margin: 0 auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .deplastified-mockups-horizontal figcaption {
@@ -571,7 +565,6 @@ main {
 	/* Fix layout containers if needed */
 	.apple-mockups,
 	.deplastified-mockups,
-	.deplastified-mockups-horizontal,
 	.flyer-gallery,
 	.video-grid {
 		display: grid;
@@ -581,13 +574,12 @@ main {
 		padding: 0 1rem;
 	}
 
-	.deplastified-mockups-horizontal img {
-		width: 100%;    
-    	max-width: 400px;
-    	height: auto;
-    	display: block;
-    	margin: 0 auto;
+	.deplastified-mockups-horizontal figure {
+		padding: 0 1rem;
+	}
 
+	.deplastified-mockups-horizontal img {
+		max-width: 100%;
 	}
 }
 
