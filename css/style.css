@@ -585,6 +585,21 @@ main {
 	.deplastified-mockups-horizontal img {
 		max-width: 100%;
 	}
+
+	footer {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	footer .social-icons {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
 }
 
 footer {
