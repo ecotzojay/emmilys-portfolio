@@ -437,20 +437,20 @@ main {
   	color: var(--deep-navy);
 }
 
-.deplastified-mockups-horitzontal {
+.deplastified-mockups-horizontal {
 	/*Layout for Deplastified project images-Hortizontal*/
   	justify-content: center;
   	display: flex;
   	margin-top: 0.5em;
 }
 
-.deplastified-mockups-horitzontal figure {
+.deplastified-mockups-horizontal figure {
 	/*Container for Deplastified horizontal image*/
   	max-width: 600px;
   	text-align: center;
 }
 
-.deplastified-mockups-horitzontal img{
+.deplastified-mockups-horizontal img{
 	/*Styling for Deplastified mockup horizontal images*/
   	height: auto;
   	width: 100%;
@@ -460,7 +460,7 @@ main {
   	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.deplastified-mockups-horitzontal figcaption {
+.deplastified-mockups-horizontal figcaption {
 	/*Caption under Deplastified horizontal mockups*/
   	margin-top: 0.5em;
   	font-size: 0.95em;
@@ -509,7 +509,7 @@ main {
 /*For smaller screens sizing*/
 @media (max-width: 768px) {
 	/* Global adjustments */
-	body {
+	html, body {
 		margin: 0 1rem;
 		font-size: 16px;
 	}
@@ -537,13 +537,14 @@ main {
 	.intro-image img,
 	.about-image img {
 		width: 100%;
-		max-width: 300px;
+		max-width: 250px;
 		height: auto;
 	}
 
 	.carousel-container {
 		font-size: 1rem;
 		padding: 0 1rem;
+		text-align: center;
 	}
 
 	/* Projects section */
@@ -553,32 +554,28 @@ main {
 		gap: 1rem;
 	}
 
-	/* Mockup galleries stack vertically */
+	/* Fix mockup and media layout */
+	.apple-mockups img,
+	.deplastified-mockups img,
+	.deplastified-mockups-horizontal img,  /* fixed typo */
+	.flyer-gallery img,
+	.video-grid video {
+		width: 100%;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+	}
+
+	/* Fix layout containers if needed */
+	.apple-mockups,
+	.deplastified-mockups,
+	.deplastified-mockups-horizontal,
 	.flyer-gallery,
 	.video-grid {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
 		justify-items: center;
-	}
-
-	video {
-		width: 100%;
-		height: auto;
-	}
-
-	.mockups img,
-	.mockups-horizontal img {
-		width: 100%;
-		height: auto;
-	}
-
-	/* Accordion buttons text wraps */
-	.accordion-header {
-		font-size: 1rem;
-		flex-wrap: wrap;
-		justify-content: center;
-		text-align: center;
 	}
 }
 
