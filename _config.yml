@@ -1,4 +1,7 @@
 title: Emmily Cotzojay Portfolio
 description: My personal portfolio website
-permalink: pretty
-baseurl: "/emmilys-portfolio"
+baseurl: "/emmilys-portfolio"  # your repo name, change if needed
+url: "https://ecotzojay.github.io"  # your GitHub Pages URL (without trailing slash)
+theme: minima
+plugins:
+  - jekyll-feed  # optional, for RSS feed support
