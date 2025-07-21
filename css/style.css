@@ -446,7 +446,7 @@ main {
 
 .deplastified-mockups-horizontal figure {
 	/*Container for Deplastified horizontal image*/
-  	max-width: 600px;
+  	max-width: 400px;
   	text-align: center;
 }
 
@@ -560,7 +560,7 @@ main {
 	.deplastified-mockups-horizontal img,  /* fixed typo */
 	.flyer-gallery img,
 	.video-grid video {
-		width: 100%;
+		width: 500px;
 		height: auto;
 		display: block;
 		margin: 0 auto;
