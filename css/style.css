@@ -545,7 +545,7 @@ main {
 		font-size: 1rem;
 		padding: 0 1rem;
 		text-align: center;
-		margin-left: 2em;
+		margin-left: 0;
 	}
 
 	/* Projects section */
@@ -558,7 +558,6 @@ main {
 	/* Fix mockup and media layout */
 	.apple-mockups img,
 	.deplastified-mockups img,
-	.deplastified-mockups-horizontal img,  /* fixed typo */
 	.flyer-gallery img,
 	.video-grid video {
 		width: 500px;
@@ -577,6 +576,15 @@ main {
 		grid-template-columns: 1fr;
 		gap: 1rem;
 		justify-items: center;
+	}
+
+	.deplastified-mockups-horizontal img {
+		width: 100%;    
+    	max-width: 400px;
+    	height: auto;
+    	display: block;
+    	margin: 0 auto;
+
 	}
 }
 
