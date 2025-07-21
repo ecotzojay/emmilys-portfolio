@@ -536,15 +536,9 @@ main {
 	}
 
 	.carousel-container {
-		width: 100%;
-		padding: 1rem;
-		margin: 0 auto;
-		text-align: center;
-		box-sizing: border-box;
-		display: flex;    
-		flex-wrap: wrap;      
-		justify-content: center;
-		gap: 1rem; 
+		flex-wrap: wrap;        /* Allow wrapping */
+    	justify-content: center; /* Center the items */
+    	gap: 1rem;
 	}
 
 	/* Projects section */
