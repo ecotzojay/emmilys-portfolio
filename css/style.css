@@ -542,10 +542,11 @@ main {
 	}
 
 	.carousel-container {
-		font-size: 1rem;
-		padding: 0 1rem;
+		width: 100%;
+		padding: 1rem;
+		margin: 0 auto;
 		text-align: center;
-		margin-left: 0;
+		box-sizing: border-box;
 	}
 
 	/* Projects section */
@@ -560,7 +561,8 @@ main {
 	.deplastified-mockups img,
 	.flyer-gallery img,
 	.video-grid video {
-		width: 200px;
+		width: 100%;
+		max-width: 300px;
 		height: auto;
 		display: block;
 		margin: 0 auto;
@@ -575,6 +577,8 @@ main {
 		display: grid;
 		gap: 1rem;
 		justify-items: center;
+		grid-template-columns: 1fr;
+		padding: 0 1rem;
 	}
 
 	.deplastified-mockups-horizontal img {
