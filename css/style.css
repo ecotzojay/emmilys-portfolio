@@ -560,7 +560,7 @@ main {
 	.deplastified-mockups img,
 	.flyer-gallery img,
 	.video-grid video {
-		width: 500px;
+		width: 200px;
 		height: auto;
 		display: block;
 		margin: 0 auto;
@@ -573,7 +573,6 @@ main {
 	.flyer-gallery,
 	.video-grid {
 		display: grid;
-		grid-template-columns: 1fr;
 		gap: 1rem;
 		justify-items: center;
 	}
