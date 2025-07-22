@@ -606,9 +606,13 @@ footer {
   	color: var(--lavender);
   	border-top: 2px solid var(--blush);
   	margin-top: 1.5rem;
-  	width: 100vw;
-  	max-width: 100vw;
+  	width: 100%;
   	box-sizing: border-box;
+
+  	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 footer p {
@@ -628,6 +632,7 @@ footer > p {
 footer .social-icons {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	flex-wrap: wrap;
 	gap: 0.5rem;
 }
