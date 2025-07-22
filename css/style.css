@@ -546,7 +546,7 @@ main {
 	.carousel-section {
 	  	width: 100%;
 	  	max-width: 100%;
-	  	text-align: left;
+	  	text-align: left !important;
 	  	margin: 0 auto;
 	  	padding: 1rem;
 	}
