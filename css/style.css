@@ -530,8 +530,7 @@ main {
 		align-items: center;
 	}
 
-	.intro-container,
-	.carousel-container {
+	.intro-container {
     	max-width: 100%;
     	margin-left: 0;
     	margin-right: 0;
@@ -543,6 +542,18 @@ main {
     	justify-content: flex-start;
     	gap: 1rem;
 	}
+
+	.carousel-container {
+    	align-items: center !important;
+    	text-align: center;
+  	}
+
+  	.carousel-text {
+    	white-space: normal;
+    	word-break: break-word;
+    	font-size: 1rem;
+    	line-height: 1.4;
+  	}
 
 	/*About sections stack */
 	.about-section {
