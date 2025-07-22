@@ -534,11 +534,11 @@ main {
     	flex-direction: column; /* stack vertically */
     	gap: 1rem;             /* smaller vertical gap */
     	padding-left: 0;
-    		padding-right: 0;
+    	padding-right: 0;
    		max-width: 100%;       /* allow full width */
   	}
 
-  	.carousel-container {
+  	.carousel-section {
 		max-width: 600px;      /* limit width to avoid full page width */
     	margin-left: auto;
     	margin-right: auto;
