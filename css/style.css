@@ -544,14 +544,14 @@ main {
 	.carousel-container {
 		flex-wrap: wrap;
     	justify-content: center; 
-    	gap: 0.25rem;
+    	gap: 0.5rem;
 	}
 
 	/* Projects section */
 	.project-details-columns {
     	flex-direction: column !important;
     	align-items: center;                
-    	gap: 0.75rem;                
+    	gap: 0.25rem;                
     	max-width: 100%;                    
     	padding: 0 1rem;
   	}
@@ -586,8 +586,8 @@ main {
 	}
 
 	.deplastified-mockups img {
-    	max-width: 300px;  /* same as videos max-width */
-    	width: 100%;       /* responsive */
+    	max-width: 200px; 
+    	width: 100%;       
     	height: auto;
     	margin-top: 1em;
   	}
