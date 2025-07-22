@@ -504,7 +504,8 @@ main {
 @media (max-width: 768px) {
 	/* Global adjustments */
 	html, body {
-		margin: 0 1rem;
+		margin: 0;
+		padding: 0 1rem;
 		font-size: 16px;
 	}
 
@@ -622,6 +623,13 @@ footer > p {
   	max-width: 1000px;
   	margin: 0 auto;
   	padding: 0;
+}
+
+footer .social-icons {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
 }
 
 footer .social-icons a img {
