@@ -544,7 +544,7 @@ main {
 	.carousel-container {
 		flex-wrap: wrap;
     	justify-content: center; 
-    	gap: 1rem;
+    	gap: 0.25rem;
 	}
 
 	/* Projects section */
@@ -559,7 +559,7 @@ main {
   	.project-detail {
     	max-width: 100% !important;         
     	width: 100% !important;      
-    	margin-bottom: 0.75rem !important; 
+    	margin-bottom: 0.25rem !important; 
   	}
 
 	/* Fix mockup and media layout */
