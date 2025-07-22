@@ -520,6 +520,11 @@ main {
 		align-items: center;
 	}
 
+	.text-blocks {
+	max-width: 100%;
+	align-items: center;
+	}
+
 	/* Intro and About sections stack */
 	.intro-container,
 	.about-section {
