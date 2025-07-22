@@ -449,7 +449,7 @@ main {
 .deplastified-mockups-horizontal img{
 	/*Styling for Deplastified mockup horizontal images*/
   	height: auto;
-  	width: 100%;
+  	width: 600px;
   	display: block;
 	margin: 0 auto;
 	border-radius: 8px;
@@ -583,6 +583,11 @@ main {
 		align-items: center;
 		text-align: center;
 		padding: 1rem 0;
+	}
+
+	.intro-image {
+		text-align: center;
+		width: 100%;
 	}
 
 	.intro-image img,
