@@ -546,13 +546,13 @@ main {
 	.carousel-section {
 	  	width: 100%;
 	  	max-width: 100%;
-	  	text-align: left !important;
+	  	text-align: center;
 	  	margin: 0 auto;
 	  	padding: 1rem;
 	}
 
 	.carousel-section h2 {
-	  	text-align: left !important;
+	  	text-align: center;
 	  	width: 100%;
 	 	margin-bottom: 0.5rem;
 	}
