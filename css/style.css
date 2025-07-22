@@ -521,8 +521,8 @@ main {
 	}
 
 	.text-blocks {
-	max-width: 100%;
-	align-items: center;
+		max-width: 100%;
+		align-items: center;
 	}
 
 	/* Intro and About sections stack */
@@ -542,21 +542,28 @@ main {
 	}
 
 	.carousel-container {
-		flex-wrap: wrap;        /* Allow wrapping */
-    	justify-content: center; /* Center the items */
+		flex-wrap: wrap;
+    	justify-content: center; 
     	gap: 1rem;
 	}
 
 	/* Projects section */
 	.project-details-columns {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
+    	flex-direction: column !important;
+    	align-items: center;                
+    	gap: 0.75rem;                
+    	max-width: 100%;                    
+    	padding: 0 1rem;
+  	}
+
+  	.project-detail {
+    	max-width: 100% !important;         
+    	width: 100% !important;      
+    	margin-bottom: 0.75rem !important; 
+  	}
 
 	/* Fix mockup and media layout */
 	.apple-mockups img,
-	.deplastified-mockups img,
 	.flyer-gallery img,
 	.video-grid video {
 		width: 100%;
@@ -577,6 +584,13 @@ main {
 		grid-template-columns: 1fr;
 		padding: 0 1rem;
 	}
+
+	.deplastified-mockups img {
+    	max-width: 300px;  /* same as videos max-width */
+    	width: 100%;       /* responsive */
+    	height: auto;
+    	margin-top: 1em;
+  	}
 
 	.deplastified-mockups-horizontal figure {
 		padding: 0 1rem;
