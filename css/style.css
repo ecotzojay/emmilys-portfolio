@@ -556,7 +556,7 @@ main {
 	.carousel-section h2 {
 	  	margin-bottom: 0.5rem;
 		width: 100%;
-		text-align: center;
+		text-align: left;
 	}
 
 	.carousel-container {
