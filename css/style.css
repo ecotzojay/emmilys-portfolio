@@ -575,6 +575,7 @@ main {
 	  	border-radius: 5px;
 	  	width: fit-content;
 	  	max-width: 90%;
+	  	text-align: center;
 	}
 
 	/*About sections stack */
