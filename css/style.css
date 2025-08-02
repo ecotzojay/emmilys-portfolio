@@ -43,11 +43,21 @@ body {
   	flex-direction: column;
 }
 
-h1, h2, h3 {
+h1, h2 {
 	/*Heading font and color*/
   	font-family: 'DM Serif Display', serif;
   	color: var(--deep-navy);
   	font-size: 30px;
+  	font-weight: 600;
+  	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+h3 {
+	/*Heading font and color*/
+  	font-family: 'DM Serif Display', serif;
+  	color: var(--deep-navy);
+  	font-size: 20px;
   	font-weight: 600;
   	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
@@ -166,22 +176,14 @@ main {
   	flex-wrap: wrap;
   	max-width: 1000px;
   	margin: 0 auto;
-  	padding: 1em 0;
+  	padding: 1.5em 0;
 }
 
 .about-text {
 	/*Text content of About Me*/
   	flex: 1 1 60%;
-  	font-size: 1.1rem;
   	line-height: 1.6;
   	margin-top: 2rem;
-}
-
-.about-text h2 {
-	/*Heading for About section*/
-	font-family: 'DM Serif Display', serif;
-	color: var(--deep-navy);
-	margin-bottom: 0.55rem;
 }
 
 .about-image img {
@@ -192,41 +194,6 @@ main {
   	border-radius: 6px;
   	border: 2px solid var(--blush);
   	display: block;
-}
-
-.project-header {
-	/*Layout for project title and logo*/
-	display: flex;
-	align-items: center;
-	gap: 0.75em;
-}
-
-.project-logo {
-	/*Sizing for project icons*/
-  	width: 36px;
-  	height: auto;
-}
-
-.social-icons {
-	/*Container for social media links*/
-  	margin-top: 1em;
-}
-
-.social-icons a {
-	/*Remove underline from social links*/
-  	text-decoration: none;
-}
-
-.social-icons a img {
-	/*Social icon size and hover effect*/
-  	width: 28px;
-  	height: 28px;
-  	margin: 0 0.5em;
-  	transition: opacity 0.3s ease;
-}
-
-.social-icons a img:hover {	
-  	opacity: 0.7;
 }
 
 .tools-section {
@@ -291,9 +258,9 @@ main {
 .accordion-header {
 	/*Clickable accordion header*/
   	padding: 1em 1.5em;
-  	min-height: 64px;
+  	min-height: 60px;
   	background-color: var(--lavender);
-  	font-size: 1.25rem;
+  	font-size: 25px;
   	font-family: 'DM Serif Display', serif;
   	display: flex;
   	align-items: center;
@@ -301,6 +268,28 @@ main {
   	border: none;
   	cursor: pointer;
   	transition: background-color 0.3s ease;
+
+  	position: relative;
+  	padding-right: 40px;
+}
+
+.accordion-header::after {
+	content: "";
+  	position: absolute;
+  	right: 35px;                
+  	top: 50%;
+  	transform: translateY(-50%);
+  	width: 25px;          
+  	height: 25px;
+  	background-image: url('../assets/icons/arrow.svg');
+  	background-repeat: no-repeat;
+  	background-size: contain;
+  	transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when expanded */
+.accordion-header[aria-expanded="true"]::after {
+  	transform: translateY(-50%) rotate(180deg);
 }
 
 .accordion-header:hover,
@@ -349,7 +338,7 @@ main {
   	margin-bottom: 0.5em;
 }
 
-.project-detail h4, .timeline h4 {
+.project-detail h3, .timeline h3 {
 	/*Underline section headers*/
 	text-decoration: underline;
 	text-underline-offset: 3px;
@@ -466,10 +455,12 @@ main {
 
 .flyer-gallery {
 	/*Flyer gallery layout*/
-  	display: flex;
+  	display: grid;
   	gap: 2em;
-  	flex-wrap: wrap;
-  	justify-content: center;
+  	margin: 0 auto;
+  	max-width: 700px;
+  	grid-template-columns: repeat(2, 1fr);
+  	justify-items: center;
 }
 
 .flyer-gallery img {
@@ -493,6 +484,7 @@ main {
   	gap: 1.5em;
   	justify-content: center;
   	margin-top: 1em;
+  	margin-bottom: 3em;
 }
 
 .video-grid video {
@@ -502,6 +494,28 @@ main {
   	border-radius: 8px;
   	border: 2px solid var(--blush);
   	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons {
+	/*Container for social media links*/
+  	margin-top: 1em;
+}
+
+.social-icons a {
+	/*Remove underline from social links*/
+  	text-decoration: none;
+}
+
+.social-icons a img {
+	/*Social icon size and hover effect*/
+  	width: 28px;
+  	height: 28px;
+  	margin: 0 0.5em;
+  	transition: opacity 0.3s ease;
+}
+
+.social-icons a img:hover {	
+  	opacity: 0.7;
 }
 
 /*For smaller screens sizing*/
@@ -606,6 +620,16 @@ main {
 		max-width: 250px;
 		height: auto;
 	}
+
+	.accordion-header {	
+  		font-size: 20px;
+  	}
+
+	.accordion-header::after {
+    	right: 16px;
+    	width: 20px;        
+    	height: 20px;
+  	}
 
 	/* Projects section */
 	.project-details-columns {
