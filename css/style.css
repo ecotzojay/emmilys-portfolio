@@ -38,7 +38,7 @@ body {
   	font-size: 16px;
   	color: var(--text-dark);
   	background-color: #fdfdfd;
-  	line-height: 1.6;
+  	line-height: 1.5;
   	display: flex;
   	flex-direction: column;
 }
@@ -47,35 +47,27 @@ h1, h2, h3 {
 	/*Heading font and color*/
   	font-family: 'DM Serif Display', serif;
   	color: var(--deep-navy);
+  	font-size: 30px;
+  	font-weight: 600;
+  	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 
 header {
 	/*Header styling with deep navy background*/
   	background-color: var(--deep-navy);
-  	padding: 1.5em;
+  	padding-top: 2em;
+  	padding-bottom: 2em;
   	text-align: center;
   	border-bottom: 2.5px solid var(--blush);
 }
 
 header h1 {
 	/*Title inside header*/
-  	margin-bottom: 0.5em;
-  	font-size: 2em;
+  	font-size: 40px;
+  	padding-bottom: 1rem;
   	color: var(--lavender);
-}
-
-.project-header {
-	/*Layout for project title and logo*/
-	display: flex;
-	align-items: center;
-	gap: 0.75em;
-}
-
-.project-logo {
-	/*Sizing for project icons*/
-  	width: 36px;
-  	height: auto;
-}
+} 
 
 nav a {
 	/*Navigation links styling*/
@@ -86,8 +78,11 @@ nav a {
 }
 
 nav a:hover {
-	/*Hover effect on navigation links*/
-  	text-decoration: underline;
+  background-color: #f6d4d4;
+  color: #0c0067;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 main {
@@ -99,13 +94,13 @@ main {
 .intro-container {
 	/*Intro content layout*/
   	max-width: 1000px;
-  	font-size: 1.4rem;
+  	font-size: 20px;
   	margin-left: auto;
   	margin-right: auto;
   	display: flex;
-  	gap: 2.5rem;
+  	gap: 5rem;
   	align-items: flex-start;
-  	padding: 1rem 0;
+  	padding: 2rem 0;
 }
 
 .text-blocks {
@@ -116,34 +111,24 @@ main {
   	flex-direction: column;
 }
 
-.intro-text h2 {
-	/*Styling for intro title*/
-	text-transform: lowercase;
-	font-weight: 600;
-	margin-bottom: 0.5rem;
-}
-
 .intro-text p {
 	/*Intro paragraph spacing*/
 	margin-top: 0;
 	line-height: 1.5;
+	font-size: 20px;
 }
 
 .carousel-section h2 {
-	/*Carousel title styling*/
-  	text-transform: lowercase;
-  	font-weight: 600;
-  	color: #0C0067;
-  	margin-top: 0.5rem;
-  	margin-bottom: -0.5rem;
+	margin-top: 2.5rem;
+	margin-bottom: -0.5rem;
 }
 
 .carousel-container {
 	/*Container for rotating text*/
   	position: relative;
-  	height: 2.5em;
   	overflow: visible;
-  	font-size: 1.2em;
+  	font-size: 1em;
+  	line-height: 1.5;
   	font-weight: 500;
   	color: var(--text-dark);
 }
@@ -159,13 +144,14 @@ main {
   	padding: 0.25rem 0.5rem;
   	border-radius: 5px;
   	white-space: nowrap;
-  	line-height: 1.2;
+  	line-height: 1.5;
 }
 
 .intro-image img {
 	/*Style intro image as circular*/
   	width: 320px;
   	height: 320px;
+  	margin-top: -1rem;
   	border-radius: 50%;
   	object-fit: cover;
   	border: 2px solid var(--blush);
@@ -206,6 +192,19 @@ main {
   	border-radius: 6px;
   	border: 2px solid var(--blush);
   	display: block;
+}
+
+.project-header {
+	/*Layout for project title and logo*/
+	display: flex;
+	align-items: center;
+	gap: 0.75em;
+}
+
+.project-logo {
+	/*Sizing for project icons*/
+  	width: 36px;
+  	height: auto;
 }
 
 .social-icons {
@@ -554,6 +553,7 @@ main {
 	}
 
 	.carousel-section h2 {
+		margin-top: 0.5rem;
 	  	margin-bottom: 0.5rem;
 		width: 100%;
 		text-align: left;
@@ -594,7 +594,13 @@ main {
 		width: 100%;
 	}
 
-	.intro-image img,
+	.intro-image img {
+		width: 100%;
+		max-width: 250px;
+		margin-top: 3rem;
+		height: auto;
+	}
+
 	.about-image img {
 		width: 100%;
 		max-width: 250px;
@@ -671,52 +677,39 @@ main {
 }
 
 footer {
-	/*Footer styling*/
-  	padding: 1.5em;
-  	background-color: var(--deep-navy);
-  	text-align: center;
-  	font-family: 'DM Serif Display', serif;
-  	color: var(--lavender);
-  	border-top: 2px solid var(--blush);
-  	margin-top: 1.5rem;
-  	width: 100%;
-  	box-sizing: border-box;
-
-  	display: flex;
+	padding: 1em;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+
+	background-color: var(--deep-navy);
+	font-family: 'DM Serif Display', serif;
+	font-weight: 200;
+	color: var(--lavender);
+	border-top: 2px solid var(--blush);
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
 }
 
 footer p {
-	/*Style for copyright text*/
-	margin: 0.5em 0 0;
-	font-size: 1em;
-}
-
-footer > div.social-icons,
-footer > p {
-	/*Ensure social icons and copyright text stay centered */
-  	max-width: 1000px;
-  	margin: 0 auto;
-  	padding: 0;
+	font-size: 15px;
+	margin: 0;
 }
 
 footer .social-icons {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
-	gap: 0.5rem;
 }
 
 footer .social-icons a img {
 	/*Style the social icon images in the footer*/
-  	width: 28px;
-  	height: 28px;
+  	width: 25px;
+  	height: 25px;
   	object-fit: contain;
-  	margin: 0 0.5em;
   	vertical-align: middle;
+  	margin-top: -0.5rem;
   	margin-bottom: 0.5rem;
   	filter: brightness(0) saturate(95%) invert(92%) sepia(12%) saturate(350%) hue-rotate(230deg) brightness(85%) contrast(85%);
   	transition: opacity 0.3s ease;

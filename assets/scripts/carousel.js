@@ -26,6 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
     el.style.transition = 'opacity 1s ease-in-out'; //Smooth fade transition
   });
 
-  //Change the visible text every 4 seconds
-  setInterval(showNextText, 4000);
+  //Change the visible text every 2 seconds
+  setInterval(showNextText, 2000);
 });
