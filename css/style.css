@@ -615,6 +615,18 @@ main {
 		padding: 1rem 0;
 	}
 
+	.about-text a {
+  		text-decoration: underline;
+  		color: inherit;
+  		transition: background-color 0.3s ease, text-decoration 0.3s ease;
+	}
+
+	.about-text a:hover {
+  		text-decorations: none;
+  		background-color: #f6d4d4;
+  		border-radius: 3px;
+	}
+
 	.intro-image {
 		text-align: center;
 		width: 100%;
