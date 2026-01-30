@@ -381,7 +381,7 @@ main {
 }
 
 .coursework-mockups img {
-  width: 100%;
+  width: 80%;
   margin-top: 1em;
   height: 375px;
   object-fit: cover;
@@ -397,6 +397,32 @@ main {
   font-size: 0.95em;
   font-family: Georgia, serif;
   color: var(--deep-navy);
+}
+
+.coursework-mockups-horizontal figure {
+	/*Container for Deplastified horizontal image*/
+  	max-width: 900px;
+  	margin: 0 auto;
+  	text-align: center;
+}
+
+.corusework-mockups-horizontal img{
+	/*Styling for Deplastified mockup horizontal images*/
+  	height: auto;
+  	width: 600px;
+  	display: block;
+	margin: 0 auto;
+	border-radius: 8px;
+	border: 2px solid var(--blush);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.coursework-mockups-horizontal figcaption {
+	/*Caption under Deplastified horizontal mockups*/
+  	margin-top: 0.5em;
+  	font-size: 0.95em;
+  	font-family: Georgia, serif;
+  	color: var(--deep-navy);
 }
 
 .apple-mockups {
