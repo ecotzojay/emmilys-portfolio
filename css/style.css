@@ -364,8 +364,8 @@ main {
   	text-align: center;
 }
 
-/*CourtHouseofHeaven project images*/
-.choh-mockups {
+/*Coursework projects images*/
+.coursework-mockups {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -376,7 +376,7 @@ main {
   margin-right: auto;
 }
 
-.choh-mockups figure {
+.coursework-mockups figure {
   flex: 1 1 calc(50% - 1em);
   max-width: 300px;
   text-align: center;
@@ -387,7 +387,7 @@ main {
   justify-content: center;
 }
 
-.choh-mockups img {
+.coursework-mockups img {
   width: 100%;
   height: 100%;       
   max-height: none; 
@@ -398,7 +398,7 @@ main {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.choh-mockups figcaption {
+.coursework-mockups figcaption {
   margin-top: 0.5em;
   font-size: 0.95em;
   font-family: Georgia, serif;
@@ -700,7 +700,7 @@ main {
     	margin-bottom: 0.25rem !important; 
   	}
 
-	  .choh-mockups figure {
+	  .coursework-mockups figure {
 	    flex: 1 1 100%;
 	    max-width: 100%;
 	}
