@@ -1,20 +1,23 @@
 .about-section {
 	/*Layout for About Me section*/
   	display: flex;
-  	gap: 3.5em;
-  	align-items: flex-start;
-  	justify-content: space-between;
-  	flex-wrap: wrap;
-  	max-width: 1000px;
-  	margin: 0 auto;
-  	padding: 1.5em 0;
+    gap: 2.5em;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 1;          
+    max-width: 1200px;
+    margin: 0 auto;    
+    padding: 2em 8%;
+    box-sizing: border-box;
 }
 
 .about-text {
 	/*Text content of About Me*/
   	flex: 1 1 60%;
-  	line-height: 1.6;
-  	margin-top: 2rem;
+  	line-height: 1.8;
+  	margin-top: 1rem;
 }
 
 .about-text a {

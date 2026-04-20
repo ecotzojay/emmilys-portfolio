@@ -1,8 +1,22 @@
+main {
+	/*Add spacing from the top and allow flexible growth*/
+  	margin-top: 4rem;
+  	flex: 1;
+}
+
+h3 {
+	/*Heading font and color*/
+  	font-family: 'DM Serif Display', serif;
+  	color: var(--deep-navy);
+  	font-size: 30px;
+  	font-weight: 600;
+  	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+} 
+
 .tools-section {
 	/*Tools section container*/
   	text-align: center;
-  	margin-top: 0.5em;
-  	margin-bottom: 2em;
 }
 
 .tools-marquee {
@@ -42,386 +56,245 @@
   	}
 }
 
-/* Accordion styles */
-.accordion-container {
-  	max-width: 900px;
- 	margin: 2em auto;
-  	border-radius: 12px;
-  	overflow: hidden;
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* This creates the 2-column layout */
+    gap: 30px; /* Space between boxes */
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.accordion-header,
-.accordion-panel {
-  	width: 100%;
-  	box-sizing: border-box;
-  	color: var(--deep-navy);
+.project-card {
+    position: relative; /* Essential for the hover overlay to stay inside the box */
+    height: 475px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.accordion-header {
-	/*Clickable accordion header*/
-  	padding: 1em 1.5em;
-  	min-height: 60px;
-  	background-color: var(--lavender);
-  	font-size: 20px;
-  	font-family: 'DM Serif Display', serif;
-  	display: flex;
-  	align-items: center;
-  	gap: 0.75em;
-  	border: none;
-  	cursor: pointer;
-  	transition: background-color 0.3s ease;
-
-  	position: relative;
-  	padding-right: 40px;
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	object-position: center;
+    transition: transform 0.4s ease;
 }
 
-.accordion-header::after {
-	content: "";
-  	position: absolute;
-  	right: 35px;                
-  	top: 50%;
-  	transform: translateY(-50%);
-  	width: 30px;          
-  	height: 30px;
-  	background-image: url('../assets/icons/arrow.svg');
-  	background-repeat: no-repeat;
-  	background-size: contain;
-  	transition: transform 0.3s ease;
+/* The Hover Overlay */
+.card-overlay {
+    position: absolute; /* Sits right on top of the image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darkens the box on hover */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
-/* Rotate arrow when expanded */
-.accordion-header[aria-expanded="true"]::after {
-  	transform: translateY(-50%) rotate(180deg);
+.card-overlay h3 {
+	color: white;
 }
 
-.accordion-header:hover,
-.accordion-header:focus {
-	/*Hover and focus effects for header*/
-  	background-color: var(--blush);
-  	outline: none;
+/* The "Action": What happens when you hover */
+.project-card:hover .card-overlay {
+    opacity: 1; /* Shows the text */
 }
 
-.accordion-header img.project-logo {
-	/*Logo inside accordion header*/
-  	width: 36px;
-  	object-fit: contain;
-  	height: 36px;
+.project-card:hover .card-image {
+    transform: scale(1.02); /* Very subtle zoom */
 }
 
-.accordion-panel {
-	/*Expandable accordion content*/
-  	background-color: rgba(246, 212, 212, 0.6);
-  	padding: 1.5em;
-  	font-family: Georgia, serif;
-  	line-height: 1.6;
+/* --- MODAL BASE --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
 }
 
-.accordion-panel > p,
-.accordion-panel > ol {
-	/*Align problem and solution text*/
-  	text-align: left;
-  	margin-bottom: 0.5em;
+.modal-content.split-view {
+    background: #fff;
+    width: 90%;
+    max-width: 1400px;
+    height: 85vh;
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
 }
 
-.project-details-columns {
-	/*Layout for tools, team, and role*/
-  	display: flex;
-  	justify-content: center;
-  	gap: 1.5rem;             
-  	max-width: 800px;
-  	flex-wrap: wrap;
-}
-
-.project-detail {
-	/*Individual detail column*/
-  	flex: 1 1 200px;         
-  	max-width: 220px;
-  	text-align: center;  
-  	margin-bottom: 0.5em;
-}
-
-.project-detail h3, .timeline h3 {
-	/*Underline section headers*/
-	text-decoration: underline;
-	text-underline-offset: 3px;
-}
-
-.timeline {
-	/*Project timeline styling*/
-  	max-width: 900px;
-  	margin-top: 1em;
-  	margin-bottom: 1em;
-  	text-align: center;
-}
-
-/*Coursework projects images*/
-.coursework-mockups {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  margin: 1em auto;
-  max-width: 900px;
-  flex-wrap: wrap;
-}
-
-.coursework-mockups figure {
-  flex: 1;
-  max-width: 300px;
-  text-align: center;
-}
-
-.coursework-mockups img {
-  width: 80%;
-  margin-top: 1em;
-  height: 375px;
-  object-fit: cover;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  border: 2px solid var(--blush);
-  background-color: #024022;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.coursework-mockups figcaption {
-  margin-top: 0.5em;
-  font-size: 0.95em;
-  font-family: Georgia, serif;
-  color: var(--deep-navy);
-}
-
-.coursework-mockups-horizontal figure {
-	/*Container for Deplastified horizontal image*/
-  	max-width: 900px;
-  	margin: 0 auto;
-  	text-align: center;
-}
-
-.corusework-mockups-horizontal img{
-	/*Styling for Deplastified mockup horizontal images*/
-  	height: auto;
-  	width: 600px;
-  	display: block;
-	margin: 0 auto;
-	border-radius: 8px;
-	border: 2px solid var(--blush);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.coursework-mockups-horizontal figcaption {
-	/*Caption under Deplastified horizontal mockups*/
-  	margin-top: 0.5em;
-  	font-size: 0.95em;
-  	font-family: Georgia, serif;
-  	color: var(--deep-navy);
-}
-
-.apple-mockups {
-	/*Layout for Apple project images*/
-  	display: flex;
-  	flex-wrap: wrap;
-  	justify-content: center;
-  	gap: 2em;
-  	margin-top: 0.5em;
-  	max-width: 900px;
-  	margin-left: auto;
-  	margin-right: auto;
-}
-
-.apple-mockups figure {
-	/*Container for each Apple image*/
-  	width: 0 1 calc(50% - 1em);
-  	max-width: 350px;
-  	text-align: center;
-}
-
-.apple-mockups img {
-	/*Styling for Apple mockup images*/
-  	width: 100%;
-  	height: 300px;
-  	object-fit: cover;
-  	border: 1px solid #ddd;
-  	border-radius: 6px;
-  	border: 2px solid var(--blush);
-  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.apple-mockups figcaption {
-	/*Caption under Apple mockups*/
-  	margin-top: 0.5em;
-  	font-size: 0.95em;
-  	font-family: Georgia, serif;
-  	color: var(--deep-navy);
-}
-
-.deplastified-mockups {
-	/*Layout for Deplastified project images*/
-  	display: flex;
-  	justify-content: center;
-  	gap: 2em;
-  	margin: 1em auto;
-  	max-width: 900px;
-  	flex-wrap: wrap;
-}
-
-.deplastified-mockups figure {
-	/*Container for each Deplastified image*/
-  	flex: 1;
-  	max-width: 300px;
-  	text-align: center;
-}
-
-.deplastified-mockups img {
-	/*Styling for Deplastified mockup images*/
-  	width: 100%;
-  	margin-top: 1em;
-  	height: 375px;
-  	object-fit: cover;
-  	border: 1px solid #ddd;
-  	border-radius: 6px;
-  	border: 2px solid var(--blush);
-  	background-color: #024022;
-  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.deplastified-mockups figcaption {
-	/*Caption under Deplastified mockups*/
-  	margin-top: 0.5em;
-  	font-size: 0.95em;
-  	font-family: Georgia, serif;
-  	color: var(--deep-navy);
-}
-
-.deplastified-mockups-horizontal figure {
-	/*Container for Deplastified horizontal image*/
-  	max-width: 900px;
-  	margin: 0 auto;
-  	text-align: center;
-}
-
-.deplastified-mockups-horizontal img{
-	/*Styling for Deplastified mockup horizontal images*/
-  	height: auto;
-  	width: 600px;
-  	display: block;
-	margin: 0 auto;
-	border-radius: 8px;
-	border: 2px solid var(--blush);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.deplastified-mockups-horizontal figcaption {
-	/*Caption under Deplastified horizontal mockups*/
-  	margin-top: 0.5em;
-  	font-size: 0.95em;
-  	font-family: Georgia, serif;
-  	color: var(--deep-navy);
-}
-
-.flyer-gallery {
-	/*Flyer gallery layout*/
-  	display: grid;
-  	gap: 2em;
-  	margin: 0 auto;
-  	max-width: 700px;
-  	grid-template-columns: repeat(2, 1fr);
-  	justify-items: center;
-}
-
-.flyer-gallery img {
-	/*Style each flyer image*/
-  	width: auto;
-  	height: 200px;
-  	border-radius: 6px;
-  	border: 2px solid var(--blush);
-  	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.usfca-flyers h3, .usfca-videos h3 {
-	/*Center titles for flyer and video sections*/
-	text-align: center;
-}
-
-.video-grid {
-	/*Grid layout for videos*/
-  	display: flex;
-  	flex-wrap: wrap;
-  	gap: 1.5em;
-  	justify-content: center;
-  	margin-top: 1em;
-  	margin-bottom: 3em;
-}
-
-.video-grid video {
-	/*Style individual video elements*/
-  	max-width: 250px;
-  	height: auto;
-  	border-radius: 8px;
-  	border: 2px solid var(--blush);
-  	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.social-icons {
-	/*Container for social media links*/
-  	margin-top: 1em;
-}
-
-.social-icons a {
-	/*Remove underline from social links*/
-  	text-decoration: none;
-}
-
-.social-icons a img {
-	/*Social icon size and hover effect*/
-  	width: 28px;
-  	height: 28px;
-  	margin: 0 0.5em;
-  	transition: opacity 0.3s ease;
-}
-
-.social-icons a img:hover {	
-  	opacity: 0.7;
-}
-
-footer {
-	padding: 1em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	background-color: var(--deep-navy);
-	font-family: 'DM Serif Display', serif;
-	font-weight: 200;
-	color: var(--lavender);
-	border-top: 2px solid var(--blush);
-	width: 100%;
+/* --- LEFT SIDE: CAROUSEL --- */
+.modal-left {
+    flex: 0 0 50%;
+    background: #f8f9fa;
+    position: relative;
+    border-right: 1px solid #eee;
+	overflow: hidden;
 	box-sizing: border-box;
-	text-align: center;
 }
 
-footer p {
-	font-size: 15px;
-	margin: 0;
+.image-carousel {
+    display: flex;
+    overflow-x: auto;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
 }
 
-footer .social-icons {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.image-carousel::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-footer .social-icons a img {
-	/*Style the social icon images in the footer*/
-  	width: 25px;
-  	height: 25px;
-  	object-fit: contain;
-  	vertical-align: middle;
-  	margin-top: -0.5rem;
-  	margin-bottom: 0.5rem;
-  	filter: brightness(0) saturate(95%) invert(92%) sepia(12%) saturate(350%) hue-rotate(230deg) brightness(85%) contrast(85%);
-  	transition: opacity 0.3s ease;
+.carousel-video {
+    max-width: 90%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px; /* Matches your image styling */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: block;
 }
 
-footer .social-icons a img:hover {
-	/*Reduce opacity on hover for icons*/
-  	opacity: 0.7;
+.carousel-item img {
+    max-width: 100%;
+    height: 375px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.carousel-item figcaption {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--deep-navy);
+    font-style: italic;
+}
+
+/* Arrow Styling */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(246, 212, 212, 0.5);
+    border: none;
+    font-size: 24px;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 110;
+    border-radius: 0 5px 5px 0;
+}
+
+.left-arrow { left: 0; }
+.right-arrow { right: 0; border-radius: 5px 0 0 5px; }
+
+.nav-arrow:hover { background: rgba(246, 212, 212, 1); }
+
+/* Progress Bar Styling */
+.progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #eee;
+    z-index: 120;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 25%; /* Starting width (1 of 4 images) */
+    background: var(--deep-navy); /* Dark indicator */
+    transition: width 0.4s ease;
+}
+
+/* --- RIGHT SIDE: CONTENT --- */
+.modal-right {
+    flex: 0 0 50%;
+    padding: 50px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+	box-sizing: border-box;
+	background-color: rgba(246, 212, 212, 0.5);
+}
+
+.header-intro {
+    display: flex;
+	flex-direction: row;
+    align-items: center; /* Vertically centers the logo with the text */
+    gap: 10px;           /* Space between the logo and the word Apple */
+    margin-bottom: 10px;
+}
+
+.modal-logo {
+    width: 70px;         /* Small and subtle */
+    height: 70px;
+    object-fit: contain; /* Prevents the logo from stretching */
+}
+
+.modal-project-title {
+    margin-top: 20px;
+	font-size: 23px;
+	line-height: 1;
+}
+
+.modal-section h3 {
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--deep-navy);
+}
+
+.modal-section p, .modal-section li {
+    line-height: 1.5;
+	font-size: 18px;
+    color: var(--deep-navy);
+}
+
+/* --- CLOSE BUTTON --- */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    color: var(--deep-navy);
+    transition: transform 0.2s;
+}
+
+.close-modal:hover { transform: scale(1.1); }
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    .modal-content.split-view {
+        flex-direction: column;
+        height: 95vh;
+    }
+    .modal-left, .modal-right {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+    .modal-left { height: 45%; }
 }
