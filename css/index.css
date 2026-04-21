@@ -73,153 +73,56 @@ main {
 /*For smaller screens sizing*/
 @media (max-width: 768px) {
 	.text-blocks {
-		max-width: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
 		align-items: center;
 	}
 
 	.intro-container {
-    	max-width: 100%;
-    	margin-left: 0;
-    	margin-right: 0;
-    	padding-left: 1rem; 
-    	padding-right: 1rem;
-    	display: flex;
+		display: flex;
     	flex-direction: column;
-    	align-items: flex-start;
-    	justify-content: center;
+    	align-items: center;
+    	text-align: center;
     	gap: 1rem;
 	}
 
 	.carousel-section {
 	  	display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: center;
 		width: 100%;
-		padding: 1rem;
-		text-align: left;
+		padding: 1rem 0;
+		text-align: center;
 	}
 
 	.carousel-section h2 {
 		margin-top: 0.5rem;
 	  	margin-bottom: 0.5rem;
 		width: 100%;
-		text-align: left;
+		text-align: center;
 	}
 
 	.carousel-container {
-	  	display: flex;
-		flex-direction: column;
-		align-items: flex-start; 
-		text-align: left;       
+		justify-content: center;
+		align-items: center;
 		width: 100%;
+		height: 2rem;
 	}
 
 	.carousel-text {
-	  	white-space: normal;
-	  	word-break: break-word;
-	  	font-size: 1rem;
+		font-size: 1rem;
 	  	line-height: 1.4;
 	  	background-color: rgba(246, 212, 212, 0.5);
-	  	padding: 0.4em 0.8em;
 	  	border-radius: 5px;
-	  	width: fit-content;
-	  	max-width: 90%;
-	  	text-align: left;
-	  	margin-left: 0;
-	}
-
-	/*About sections stack */
-	.about-section {
-		flex-direction: column;
-		align-items: center;
+		margin-left: 6rem;
 		text-align: center;
-		padding: 1rem 0;
-	}
-
-	.intro-image {
-		text-align: center;
-		width: 100%;
 	}
 
 	.intro-image img {
-		width: 100%;
-		max-width: 250px;
-		margin-top: 3rem;
-		height: auto;
-	}
-
-	.about-image img {
-		width: 100%;
-		max-width: 250px;
-		height: auto;
-	}
-
-	.accordion-header {	
-  		font-size: 20px;
-  	}
-
-	.accordion-header::after {
-    	right: 16px;
-    	width: 20px;        
-    	height: 20px;
-  	}
-
-	/* Projects section */
-	.project-details-columns {
-    	flex-direction: column !important;
-    	align-items: center;                
-    	gap: 0.25rem;                
-    	max-width: 100%;                    
-    	padding: 0 1rem;
-  	}
-
-  	.project-detail {
-    	max-width: 100% !important;         
-    	width: 100% !important;      
-    	margin-bottom: 0.25rem !important; 
-  	}
-
-	  .coursework-mockups figure {
-	    flex: 1 1 100%;
-	    max-width: 100%;
-	}
-
-	/* Fix mockup and media layout */
-	.apple-mockups img,
-	.flyer-gallery img,
-	.video-grid video {
-		width: 100%;
-		max-width: 300px;
-		height: auto;
-		display: block;
-		margin: 0 auto;
-	}
-
-	/* Fix layout containers if needed */
-	.apple-mockups,
-	.deplastified-mockups,
-	.flyer-gallery,
-	.video-grid {
-		display: grid;
-		gap: 1rem;
-		justify-items: center;
-		grid-template-columns: 1fr;
-		padding: 0 1rem;
-	}
-
-	.deplastified-mockups img {
-    	max-width: 200px; 
-    	width: 100%;       
-    	height: auto;
-    	margin-top: 1em;
-  	}
-
-	.deplastified-mockups-horizontal figure {
-		padding: 0 1rem;
-	}
-
-	.deplastified-mockups-horizontal img {
-		max-width: 100%;
+		width: 250px;
+		height: 250px;
+		margin-top: 0.5rem;
 	}
 }
