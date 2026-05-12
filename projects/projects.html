@@ -90,7 +90,7 @@
         		</div>
 
 				<div class="project-card" onclick="openModal('modal-policy')">
-            		<img src="img/images/policylab/illustrator.png" alt="Policy Lab" class="card-image">
+            		<img src="img/images/policylab/policy-page.png" alt="Policy Lab" class="card-image">
             		<div class="card-overlay">
 						<h3>USF Policy Lab</h3>
 						<p>Building a Digital Foundation for Policy Research</p>
@@ -102,6 +102,14 @@
 					<div class="card-overlay">
 						<h3>Paris Blog</h3>
 						<p>Ideation, Design, & Custom Implementation</p>
+					</div>
+				</div>
+
+				<div class="project-card" onclick="openModal('modal-benefit')">
+					<img src="img/images/thebenefit/primeras-homepage.png" alt="Primeras Abroad Homepage" class="card-image">
+					<div class="card-overlay">
+						<h3>Primeras Abroad</h3>
+						<p>Conceptualized & Curated Benefit Event</p>
 					</div>
 				</div>
 
@@ -126,13 +134,6 @@
 					<div class="card-overlay">
 						<h3>Small Projects</h3>
 						<p>Design Basics / Principles Applied</p>
-					</div>
-				</div>
-
-				<div class="project-card" onclick="openModal('modal-the-benefit')">
-					<div class="card-overlay">
-						<h3>The Benefit</h3>
-						<p>Currently in progress - coming soon!</p>
 					</div>
 				</div>
 			</div>
@@ -264,20 +265,20 @@
 
 					<div class="image-carousel" id="policy-carousel">
 						<figure class="carousel-item">
-							<img src="img/images/policylab/iteration1.png" alt="SignUp Screen" />
+							<img src="img/images/policylab/iteration1.png" alt="Logo iterations in black and white" />
 							<figcaption>Initial logo iterations</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/policylab/iteration2.png" alt="AI Camera Interface" />
-							<figcaption>Additional logo iterations and initial color palette</figcaption>
+							<img src="img/images/policylab/illustrator.png" alt="Adobe Illustrator interface with black and white logo iterations" />
+							<figcaption>Additional logo iterations</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/policylab/policy-edits.png" alt="Educational Resources" />
+							<img src="img/images/policylab/policy-edits.png" alt="USF's website builder" />
 							<figcaption>Working with USF's WYSIWYG platform to build out the website</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/policylab/policy-page.png" alt="Full Flow"/>
-							<figcaption>Fully polished page that organizes the lab's information in the USF interface</figcaption>
+							<img src="img/images/policylab/policy-page.png" alt="USF Policy Lab Students Page"/>
+							<figcaption>Fully polished Students page</figcaption>
 						</figure>
 					</div>
 
@@ -323,19 +324,19 @@
 
 					<div class="image-carousel" id="blog-carousel">
 						<figure class="carousel-item">
-							<img src="img/images/theblog/moodboard.png" alt="SignUp Screen" />
+							<img src="img/images/theblog/moodboard.png" alt="Figma workspace with a collection of images showing Parisian streets and aesthetic" />
 							<figcaption>Curation of typography, color, and photography of the Parisian aesthetic</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/theblog/low-fi.png" alt="AI Camera Interface" />
+							<img src="img/images/theblog/low-fi.png" alt="Sketches and Low-fidelity wireframes" />
 							<figcaption>Moving from sketches to low-fidelity wireframes to define user flow</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/theblog/illustrator.png" alt="Educational Resources" />
+							<img src="img/images/theblog/illustrator.png" alt="Adobe Illustrator workspace with vector based illustrations" />
 							<figcaption>Vector illustration for navigation icons and branding elements</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/theblog/high-fi.png" alt="Full Flow"/>
+							<img src="img/images/theblog/high-fi.png" alt="High-fidelity wireframes for each page"/>
 							<figcaption>Finalized high-fidelity sketches</figcaption>
 						</figure>
 						<figure class="carousel-item">
@@ -374,6 +375,65 @@
 			</div>
 		</div>
 
+		<!--The Benefit Project-->
+		<div id="modal-benefit" class="modal">
+			<div class="modal-content split-view">
+				<span class="close-modal" onclick="closeModal('modal-benefit')">&times;</span>
+				
+				<div class="modal-left">
+					<button class="nav-arrow left-arrow" onclick="moveCarousel('benefit', -1)">&#10094;</button>
+					<button class="nav-arrow right-arrow" onclick="moveCarousel('benefit', 1)">&#10095;</button>
+
+					<div class="image-carousel" id="benefit-carousel">
+						<figure class="carousel-item">
+							<img src="img/images/thebenefit/photoshop.png" alt="Adobe Photoshop workspace with images imported" />
+							<figcaption>Collected images for website and poster</figcaption>
+						</figure>
+						<figure class="carousel-item">
+							<img src="img/images/thebenefit/poster.png" alt="Poster of Primeras Abroad with two women facing forward and text surrounding them." />
+							<figcaption>Used Adobe Illustrator to make illustrations</figcaption>
+						</figure>
+						<figure class="carousel-item">
+							<img src="img/images/thebenefit/framer.png" alt="Framer workspace including the Primeras Abroad homepage and tools surrounding it." />
+							<figcaption>Used Framer to build Primeras Abroad website</figcaption>
+						</figure>
+						<figure class="carousel-item">
+							<video autoplay loop muted playsinline class="carousel-video"><source src="img/images/thebenefit/primeras-recording.mp4" type="video/mp4">Your browser does not support the video tag.
+    						</video>
+    						<figcaption>Final responsive site that pulls all the assets together</figcaption>
+						</figure>
+					</div>
+
+					<div class="progress-container">
+						<div class="progress-bar" id="benefit-progress"></div>
+					</div>
+				</div>
+
+				<div class="modal-right">
+					<div class="modal-header">
+						<div class="header-intro">
+							<img src="img/icons/primeras.png" alt="Primeras Abroad Logo" class="modal-logo"/>
+							<h3 class="modal-project-title">Conceptualized & Curated Benefit Event</h3>
+						</div>
+					</div>
+
+					<section class="modal-section">
+						<h3>Objective</h3>
+						<p>Conceptualize and curate a comprehensive benefit event and brand identity for a self-selected cause, integrating multi-channel deliverables including a responsive website and professional poster.</p>
+					</section>
+
+					<section class="modal-section">
+						<h3>Implementation</h3>
+						<ul>
+							<li>Collaborated with USF's Study Abroad office to identify institutional gaps and cultural barriers preventing first-generation Latina students from accessing international programs.</li>
+							<li>Developed Primeras Abroad, a benefit initiative featuring four events: a "Family Pitch" workshop, alumni Q&A panels, a resource fair, and a technical planning workshop.</li>
+							<li>Created a full visual identity—including a custom logo, color palette, and typography—designed to feel culturally resonant, inclusive, and empowering.</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>
+
 		<!--The Feed Project-->
 		<div id="modal-feed" class="modal">
 			<div class="modal-content split-view">
@@ -385,15 +445,15 @@
 
 					<div class="image-carousel" id="feed-carousel">
 						<figure class="carousel-item">
-							<img src="img/images/thefeed/illustrator.png" alt="SignUp Screen" />
+							<img src="img/images/thefeed/illustrator.png" alt="Adobe Illustrator workspace with cat illustrations." />
 							<figcaption>Created custom assets that add a personal touch to the site</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/thefeed/illustrator2.png" alt="AI Camera Interface" />
+							<img src="img/images/thefeed/illustrator2.png" alt="Adobe Illustrator workspace incorporating cat illustrations into a laced background." />
 							<figcaption>Using Illustrator to integrate designs into the overall background</figcaption>
 						</figure>
 						<figure class="carousel-item">
-							<img src="img/images/thefeed/photoshop.png" alt="Educational Resources" />
+							<img src="img/images/thefeed/photoshop.png" alt="Adobe Photoshop workspace with a phone illustration." />
 							<figcaption>Using Photoshop to animate assets into the final GIF for the splash page</figcaption>
 						</figure>
 						<figure class="carousel-item">
@@ -423,7 +483,7 @@
 					<section class="modal-section">
 						<h3>Implementation</h3>
 						<ul>
-							<li>I developed a "Wildflower" aesthetic using soft creams, deep reds, and polka dots to give the tech-heavy content a more organic and personal feel.</li>
+							<li>Developed a "Wildflower" aesthetic using soft creams, deep reds, and polka dots to give the tech-heavy content a more organic and personal feel.</li>
 							<li>Built a custom "Feed" page that holds 12 different entries, making sure it was easy to scroll through everything chronologically.</li>
 						</ul>
 					</section>
@@ -442,7 +502,7 @@
 
 					<div class="image-carousel" id="coursework-carousel">
 						<figure class="carousel-item">
-							<img src="img/images/coursework/project2.png" alt="Early Portfolio" />
+							<img src="img/images/coursework/project2.png" alt="Altar Project" />
 							<figcaption>What does the word Altar mean to me</figcaption>
 						</figure>
 						<figure class="carousel-item">
@@ -482,8 +542,8 @@
 					<section class="modal-section">
 						<h3>Key Learnings</h3>
 						<ul>
-							<li><b>Visual Hierarchy:</b> Designing postcards that balances imagery with clear, readable typography.</li>
-							<li><b>Design Principles:</b> Applying concepts like contrast, alignment, and proximity to create cohesive and professional layouts.</li>
+							<li><b>Visual Hierarchy:</b> Designed postcards that balances imagery with clear, readable typography.</li>
+							<li><b>Design Principles:</b> Applied concepts like contrast, alignment, and proximity to create cohesive and professional layouts.</li>
 						</ul>
 					</section>
 				</div>
