@@ -30,7 +30,7 @@ body::before {
   	pointer-events: none;
 }
 
-h1, h2 {
+h2 {
 	/*Heading font and color*/
   	font-family: 'DM Serif Display', serif;
   	color: var(--deep-navy);
@@ -38,6 +38,16 @@ h1, h2 {
   	font-weight: 400;
   	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
+}
+
+h1 a {
+	font-family: 'DM Serif Display', serif;
+  	color: var(--lavender);
+  	font-size: 25px;
+  	font-weight: 400;
+  	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	text-decoration: none;
 }
 
 body {
